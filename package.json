@@ -7,7 +7,7 @@
     "grunt-contrib-watch": "~0.6.1"
   },
   "dependencies": {
-    "angular": "~1.6.8",
+    "angular": "~1.6.9",
     "jsqrcode": "0.0.6"
   },
   "main": "qr-scanner-u.js"
