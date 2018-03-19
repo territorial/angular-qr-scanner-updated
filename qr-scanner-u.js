@@ -42,14 +42,17 @@ angular.module('qrScannerU', ["ng"]).directive('qrScannerU', ['$interval', '$win
           context.drawImage(video, 0, 0, 307,250);
           try
           {
-            qrcode.decode();
+            if(document.getElementById("qr-canvas")!=null)
+            {
+              qrcode.decode();
+            }
           }
           catch(e)
           {
             scope.ngError({error: e});
           }
         }
-      }
+      };
 
       var successCallback = function(stream)
       {
@@ -59,7 +62,7 @@ angular.module('qrScannerU', ["ng"]).directive('qrScannerU', ['$interval', '$win
         scope.video = video;
         video.play();
         stopScan = $interval(scan, 500);
-      }
+      };
 
       // Call the getUserMedia method with our callback functions
       if (navigator.getUserMedia)
